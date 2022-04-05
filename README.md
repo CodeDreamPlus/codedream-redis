@@ -209,3 +209,5 @@ codedream:
 | 注解字段 | 解释 | 示例 |
 |:---:|:---:|:---:|
 | cacheNames | #后面为缓存时间，单位为秒 | test#1 |
+
+### demo地址（https://github.com/CodeDreamPlus/codedream-redis-demo）
