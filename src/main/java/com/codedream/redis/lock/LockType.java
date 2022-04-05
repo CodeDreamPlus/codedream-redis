@@ -20,7 +20,7 @@ package com.codedream.redis.lock;
 /**
  * 锁类型
  *
- * @author lcm
+ * @author yxz
  */
 public enum LockType {
 	/**

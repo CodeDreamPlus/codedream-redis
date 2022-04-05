@@ -12,11 +12,9 @@ import java.util.Objects;
 /**
  * 将redis key序列化为字符串
  *
- * <p>
  * spring cache中的简单基本类型直接使用 StringRedisSerializer 会有问题
- * </p>
  *
- * @author xuzhanfu
+ * @author yxz
  */
 public class RedisKeySerializer implements RedisSerializer<Object> {
 	private final Charset charset;

@@ -11,7 +11,7 @@ import org.springframework.util.ObjectUtils;
 /**
  * ProtoStuff 序列化
  *
- * @author xuzhanfu
+ * @author yxz
  */
 public class ProtoStuffSerializer implements RedisSerializer<Object> {
 	public static final Schema<BytesWrapper> SCHEMA = RuntimeSchema.getSchema(BytesWrapper.class);

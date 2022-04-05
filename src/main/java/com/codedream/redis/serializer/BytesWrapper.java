@@ -3,7 +3,7 @@ package com.codedream.redis.serializer;
 /**
  * redis序列化辅助类.单纯的泛型无法定义通用schema，原因是无法通过泛型T得到Class
  *
- * @author xuzhanfu
+ * @author yxz
  */
 public class BytesWrapper<T> implements Cloneable {
 	private T value;
