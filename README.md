@@ -1,4 +1,4 @@
-# codedream-redis
+# codedreamplus-redis
 
 在微服务开发过程中，不免会用到分布式锁和限流，采用 Redis 进行分布式锁和限流性能也不会影响太大的性能。codedream-redis 其中包含了自定义注解实现方法的分布式锁和限流的功能。
 
@@ -9,9 +9,9 @@
 ```xml
 
 <dependency>
-    <groupId>com.code.dream</groupId>
-    <artifactId>codedream-redis</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <groupId>com.codedreamplus</groupId>
+    <artifactId>redis</artifactId>
+    <version>1.0.0</version>
 </dependency>
 ```
 
