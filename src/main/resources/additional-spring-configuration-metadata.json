@@ -1,7 +1,7 @@
 {
   "properties": [
     {
-      "name": "codedream.redis.rate-limiter.enabled",
+      "name": "codedreamplus.redis.rate-limiter.enabled",
       "type": "java.lang.Boolean",
       "description": "是否开启 redis 分布式限流.",
       "defaultValue": "false"

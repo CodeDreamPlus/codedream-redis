@@ -18,7 +18,7 @@ public interface CodeDreamRedisSerializerConfigAble {
 	 * @param properties 配置
 	 * @return RedisSerializer
 	 */
-	RedisSerializer<Object> redisSerializer(CodeDreamRedisProperties properties);
+	RedisSerializer<Object> redisSerializer(CodeDreamPlusRedisProperties properties);
 
 	/**
 	 * 默认的序列化方式
@@ -26,9 +26,9 @@ public interface CodeDreamRedisSerializerConfigAble {
 	 * @param properties 配置
 	 * @return RedisSerializer
 	 */
-	default RedisSerializer<Object> defaultRedisSerializer(CodeDreamRedisProperties properties) {
-		CodeDreamRedisProperties.SerializerType serializerType = properties.getSerializerType();
-		if (CodeDreamRedisProperties.SerializerType.JDK == serializerType) {
+	default RedisSerializer<Object> defaultRedisSerializer(CodeDreamPlusRedisProperties properties) {
+		CodeDreamPlusRedisProperties.SerializerType serializerType = properties.getSerializerType();
+		if (CodeDreamPlusRedisProperties.SerializerType.JDK == serializerType) {
 			/**
 			 * SpringBoot扩展了ClassLoader，进行分离打包的时候，使用到JdkSerializationRedisSerializer的地方
 			 * 会因为ClassLoader的不同导致加载不到Class

@@ -29,16 +29,16 @@
 @AllArgsConstructor
 public class DemoController {
 
-  private final CodeDreamRedis codeDreamRedis;
+  private final CodeDreamPlusRedis codeDreamPlusRedis;
 
   @GetMapping
   public String get() {
-    return codeDreamRedis.get("test");
+    return codeDreamPlusRedis.get("test");
   }
 
   @PostMapping
   public Boolean save() {
-    codeDreamRedis.set("test", "1111");
+    codeDreamPlusRedis.set("test", "1111");
     return Boolean.TRUE;
   }
 }
@@ -53,7 +53,7 @@ public class DemoController {
 - 配置-单体
 
 ```yaml
-codedream:
+codedreamplus:
   redis:
     lock:
       enabled: true
@@ -73,7 +73,7 @@ codedream:
 - 配置-主从
 
 ```yaml
-codedream:
+codedreamplus:
   redis:
     lock:
       enabled: true
@@ -97,7 +97,7 @@ codedream:
 - 配置-哨兵
 
 ```yaml
-codedream:
+codedreamplus:
   redis:
     lock:
       enabled: true
@@ -120,7 +120,7 @@ codedream:
 - 配置-集群
 
 ```yaml
-codedream:
+codedreamplus:
   redis:
     lock:
       enabled: true
@@ -161,7 +161,7 @@ codedream:
 - 配置
 
 ```yaml
-codedream:
+codedreamplus:
   redis:
     rate-limiter:
       enabled: true
@@ -190,7 +190,7 @@ codedream:
 - 配置
 
 ```yaml
-codedream:
+codedreamplus:
   redis:
     serializer-type: protostuff
 ```
@@ -210,4 +210,4 @@ codedream:
 |:---:|:---:|:---:|
 | cacheNames | #后面为缓存时间，单位为秒 | test#1 |
 
-### demo地址（https://github.com/CodeDreamPlus/codedream-redis-demo）
+### demo地址（https://github.com/CodeDreamPlus/redis-demo）

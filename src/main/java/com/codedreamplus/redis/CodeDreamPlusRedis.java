@@ -16,7 +16,7 @@ import java.util.function.Supplier;
 @Getter
 @RequiredArgsConstructor
 @SuppressWarnings("unchecked")
-public class CodeDreamRedis implements SmartInitializingSingleton {
+public class CodeDreamPlusRedis implements SmartInitializingSingleton {
 
 	private final RedisTemplate<String, Object> redisTemplate;
 	private ValueOperations<String, Object> valueOps;

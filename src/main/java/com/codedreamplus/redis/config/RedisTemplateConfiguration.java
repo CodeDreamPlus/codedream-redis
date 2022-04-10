@@ -1,6 +1,6 @@
 package com.codedreamplus.redis.config;
 
-import com.codedreamplus.redis.CodeDreamRedis;
+import com.codedreamplus.redis.CodeDreamPlusRedis;
 import com.codedreamplus.redis.serializer.RedisKeySerializer;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -22,7 +22,7 @@ import org.springframework.data.redis.serializer.RedisSerializer;
 @EnableCaching
 @Configuration
 @AutoConfigureBefore(RedisAutoConfiguration.class)
-@EnableConfigurationProperties(CodeDreamRedisProperties.class)
+@EnableConfigurationProperties(CodeDreamPlusRedisProperties.class)
 public class RedisTemplateConfiguration implements CodeDreamRedisSerializerConfigAble {
 
     /**
@@ -33,7 +33,7 @@ public class RedisTemplateConfiguration implements CodeDreamRedisSerializerConfi
     @Bean
     @ConditionalOnMissingBean(RedisSerializer.class)
     @Override
-    public RedisSerializer<Object> redisSerializer(CodeDreamRedisProperties properties) {
+    public RedisSerializer<Object> redisSerializer(CodeDreamPlusRedisProperties properties) {
         return defaultRedisSerializer(properties);
     }
 
@@ -60,8 +60,8 @@ public class RedisTemplateConfiguration implements CodeDreamRedisSerializerConfi
     }
 
     @Bean
-    public CodeDreamRedis codeDreamRedis(RedisTemplate<String, Object> redisTemplate) {
-        return new CodeDreamRedis(redisTemplate);
+    public CodeDreamPlusRedis codeDreamRedis(RedisTemplate<String, Object> redisTemplate) {
+        return new CodeDreamPlusRedis(redisTemplate);
     }
 
 }

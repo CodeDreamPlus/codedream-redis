@@ -22,7 +22,7 @@ import java.util.List;
  * @author cool
  */
 @Configuration
-@ConditionalOnProperty(value = "codedream.redis.rate-limiter.enabled", havingValue = "true")
+@ConditionalOnProperty(value = "codedreamplus.redis.rate-limiter.enabled", havingValue = "true")
 public class RateLimiterAutoConfiguration {
 
 	@SuppressWarnings("unchecked")

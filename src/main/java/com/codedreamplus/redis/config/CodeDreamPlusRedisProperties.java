@@ -6,8 +6,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @Getter
 @Setter
-@ConfigurationProperties("codedream.redis")
-public class CodeDreamRedisProperties {
+@ConfigurationProperties("codedreamplus.redis")
+public class CodeDreamPlusRedisProperties {
 
 	/**
 	 * 序列化方式

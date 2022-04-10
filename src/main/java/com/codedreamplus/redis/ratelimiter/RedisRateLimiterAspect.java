@@ -1,7 +1,7 @@
 package com.codedreamplus.redis.ratelimiter;
 
 
-import com.codedreamplus.redis.spel.CodeDreamExpressionEvaluator;
+import com.codedreamplus.redis.spel.CodeDreamPlusExpressionEvaluator;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -30,7 +30,7 @@ public class RedisRateLimiterAspect implements ApplicationContextAware {
 	/**
 	 * 表达式处理
 	 */
-	private final CodeDreamExpressionEvaluator evaluator = new CodeDreamExpressionEvaluator();
+	private final CodeDreamPlusExpressionEvaluator evaluator = new CodeDreamPlusExpressionEvaluator();
 	/**
 	 * redis 限流服务
 	 */

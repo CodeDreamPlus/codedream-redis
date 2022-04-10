@@ -1,7 +1,7 @@
 
 package com.codedreamplus.redis.lock;
 
-import com.codedreamplus.redis.spel.CodeDreamExpressionEvaluator;
+import com.codedreamplus.redis.spel.CodeDreamPlusExpressionEvaluator;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -30,7 +30,7 @@ public class RedisLockAspect implements ApplicationContextAware {
     /**
      * 表达式处理
      */
-    private static final CodeDreamExpressionEvaluator EVALUATOR = new CodeDreamExpressionEvaluator();
+    private static final CodeDreamPlusExpressionEvaluator EVALUATOR = new CodeDreamPlusExpressionEvaluator();
     /**
      * redis 限流服务
      */

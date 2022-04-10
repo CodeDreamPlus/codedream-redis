@@ -19,9 +19,9 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ConditionalOnClass(RedissonClient.class)
-@EnableConfigurationProperties(CodeDreamRedisLockProperties.class)
-@ConditionalOnProperty(value = "codedream.redis.lock.enabled", havingValue = "true")
-public class CodeDreamLockAutoConfiguration {
+@EnableConfigurationProperties(CodeDreamPlusRedisLockProperties.class)
+@ConditionalOnProperty(value = "codedreamplus.redis.lock.enabled", havingValue = "true")
+public class CodeDreamPlusLockAutoConfiguration {
 
 	/**
 	 * 单例的配置
@@ -29,7 +29,7 @@ public class CodeDreamLockAutoConfiguration {
 	 * @param properties 属性
 	 * @return {@link Config}
 	 */
-	private static Config singleConfig(CodeDreamRedisLockProperties properties) {
+	private static Config singleConfig(CodeDreamPlusRedisLockProperties properties) {
 		Config config = new Config();
 		SingleServerConfig serversConfig = config.useSingleServer();
 		serversConfig.setAddress(properties.getAddress());
@@ -52,7 +52,7 @@ public class CodeDreamLockAutoConfiguration {
 	 * @param properties 属性
 	 * @return {@link Config}
 	 */
-	private static Config masterSlaveConfig(CodeDreamRedisLockProperties properties) {
+	private static Config masterSlaveConfig(CodeDreamPlusRedisLockProperties properties) {
 		Config config = new Config();
 		MasterSlaveServersConfig serversConfig = config.useMasterSlaveServers();
 		serversConfig.setMasterAddress(properties.getMasterAddress());
@@ -78,7 +78,7 @@ public class CodeDreamLockAutoConfiguration {
 	 * @param properties 属性
 	 * @return {@link Config}
 	 */
-	private static Config sentinelConfig(CodeDreamRedisLockProperties properties) {
+	private static Config sentinelConfig(CodeDreamPlusRedisLockProperties properties) {
 		Config config = new Config();
 		SentinelServersConfig serversConfig = config.useSentinelServers();
 		serversConfig.setMasterName(properties.getMasterName());
@@ -104,7 +104,7 @@ public class CodeDreamLockAutoConfiguration {
 	 * @param properties 属性
 	 * @return {@link Config}
 	 */
-	private static Config clusterConfig(CodeDreamRedisLockProperties properties) {
+	private static Config clusterConfig(CodeDreamPlusRedisLockProperties properties) {
 		Config config = new Config();
 		ClusterServersConfig serversConfig = config.useClusterServers();
 		serversConfig.addNodeAddress(properties.getNodeAddress());
@@ -124,7 +124,7 @@ public class CodeDreamLockAutoConfiguration {
 
 	@Bean
 	@ConditionalOnMissingBean
-	public RedisLockClient redisLockClient(CodeDreamRedisLockProperties properties) {
+	public RedisLockClient redisLockClient(CodeDreamPlusRedisLockProperties properties) {
 		return new RedisLockClientImpl(redissonClient(properties));
 	}
 
@@ -134,8 +134,8 @@ public class CodeDreamLockAutoConfiguration {
 		return new RedisLockAspect(redisLockClient);
 	}
 
-	private static RedissonClient redissonClient(CodeDreamRedisLockProperties properties) {
-		CodeDreamRedisLockProperties.Mode mode = properties.getMode();
+	private static RedissonClient redissonClient(CodeDreamPlusRedisLockProperties properties) {
+		CodeDreamPlusRedisLockProperties.Mode mode = properties.getMode();
 		Config config;
 		switch (mode) {
 			case sentinel:

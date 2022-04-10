@@ -12,7 +12,7 @@ import java.lang.reflect.Method;
  */
 @Getter
 @AllArgsConstructor
-public class CodeDreamExpressionRootObject {
+public class CodeDreamPlusExpressionRootObject {
 	private final Method method;
 
 	private final Object[] args;

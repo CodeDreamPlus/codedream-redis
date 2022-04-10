@@ -11,10 +11,10 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  */
 @Getter
 @Setter
-@ConfigurationProperties(CodeDreamRedisLockProperties.PREFIX)
-public class CodeDreamRedisLockProperties {
+@ConfigurationProperties(CodeDreamPlusRedisLockProperties.PREFIX)
+public class CodeDreamPlusRedisLockProperties {
 
-	public static final String PREFIX = "codedream.redis.lock";
+	public static final String PREFIX = "codedreamplus.redis.lock";
 
 	/**
 	 * 是否开启：默认为：false，便于生成配置提示。

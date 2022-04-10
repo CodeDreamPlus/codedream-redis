@@ -31,7 +31,7 @@ import java.util.Map;
 @AutoConfigureAfter(RedisAutoConfiguration.class)
 @ConditionalOnBean(RedisConnectionFactory.class)
 @EnableConfigurationProperties(CacheProperties.class)
-public class CodeDreamRedisCacheAutoConfiguration {
+public class CodeDreamPlusRedisCacheAutoConfiguration {
 
 	/**
 	 * 序列化方式
@@ -42,10 +42,10 @@ public class CodeDreamRedisCacheAutoConfiguration {
 	@Nullable
 	private final RedisCacheConfiguration redisCacheConfiguration;
 
-	CodeDreamRedisCacheAutoConfiguration(RedisSerializer<Object> redisSerializer,
-										 CacheProperties cacheProperties,
-										 CacheManagerCustomizers customizerInvoker,
-										 ObjectProvider<RedisCacheConfiguration> redisCacheConfiguration) {
+	CodeDreamPlusRedisCacheAutoConfiguration(RedisSerializer<Object> redisSerializer,
+											 CacheProperties cacheProperties,
+											 CacheManagerCustomizers customizerInvoker,
+											 ObjectProvider<RedisCacheConfiguration> redisCacheConfiguration) {
 		this.redisSerializer = redisSerializer;
 		this.cacheProperties = cacheProperties;
 		this.customizerInvoker = customizerInvoker;

@@ -23,8 +23,8 @@ public class ProtoStuffSerializerConfiguration implements CodeDreamRedisSerializ
     @Bean
     @ConditionalOnMissingBean
     @Override
-    public RedisSerializer<Object> redisSerializer(CodeDreamRedisProperties properties) {
-        if (CodeDreamRedisProperties.SerializerType.ProtoStuff == properties.getSerializerType()) {
+    public RedisSerializer<Object> redisSerializer(CodeDreamPlusRedisProperties properties) {
+        if (CodeDreamPlusRedisProperties.SerializerType.ProtoStuff == properties.getSerializerType()) {
             return new ProtoStuffSerializer();
         }
         return defaultRedisSerializer(properties);

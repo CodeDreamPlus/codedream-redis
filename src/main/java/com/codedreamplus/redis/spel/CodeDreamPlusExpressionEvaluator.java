@@ -19,12 +19,11 @@ import java.util.concurrent.ConcurrentHashMap;
  *
  * @author cool
  */
-public class CodeDreamExpressionEvaluator extends CachedExpressionEvaluator {
+public class CodeDreamPlusExpressionEvaluator extends CachedExpressionEvaluator {
 	private final Map<ExpressionKey, Expression> expressionCache = new ConcurrentHashMap<>(64);
 	private final Map<AnnotatedElementKey, Method> methodCache = new ConcurrentHashMap<>(64);
 
 	/**
-	 * Create an {@link EvaluationContext}.
 	 *
 	 * @param method      the method
 	 * @param args        the method arguments
@@ -34,7 +33,7 @@ public class CodeDreamExpressionEvaluator extends CachedExpressionEvaluator {
 	 */
 	public EvaluationContext createContext(Method method, Object[] args, Object target, Class<?> targetClass, @Nullable BeanFactory beanFactory) {
 		Method targetMethod = getTargetMethod(targetClass, method);
-		CodeDreamExpressionRootObject rootObject = new CodeDreamExpressionRootObject(method, args, target, targetClass, targetMethod);
+		CodeDreamPlusExpressionRootObject rootObject = new CodeDreamPlusExpressionRootObject(method, args, target, targetClass, targetMethod);
 		MethodBasedEvaluationContext evaluationContext = new MethodBasedEvaluationContext(rootObject, targetMethod, args, getParameterNameDiscoverer());
 		if (beanFactory != null) {
 			evaluationContext.setBeanResolver(new BeanFactoryResolver(beanFactory));
@@ -43,7 +42,6 @@ public class CodeDreamExpressionEvaluator extends CachedExpressionEvaluator {
 	}
 
 	/**
-	 * Create an {@link EvaluationContext}.
 	 *
 	 * @param method      the method
 	 * @param args        the method arguments
