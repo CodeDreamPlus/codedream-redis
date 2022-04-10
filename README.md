@@ -10,7 +10,7 @@
 
 <dependency>
     <groupId>com.codedreamplus</groupId>
-    <artifactId>redis</artifactId>
+    <artifactId>codedreamplus-redis</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```
